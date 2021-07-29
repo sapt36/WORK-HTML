@@ -1,0 +1,36 @@
+<html>
+<title>U10916040.web2</title>
+<body bgcolor="Aqua" text="black">
+<h1>判斷迴文(Palindrome)</h1>
+<hr width=80%>
+<h2>source codes:</h2>
+<pre>
+<ol>
+<l1>import java.util.Scanner;<br>
+<l2>public class HW {<br>
+<l3>&#9;public static void main(String[] args) {<br>
+<l4>&#9;&#9;System.out.println("please enter a string or a number:");<br>
+<l5>&#9;&#9;&#9;Scanner scanner = new Scanner(System.in);<br>
+<l6>&#9;&#9;&#9;while(scanner.hasNext()){<br>
+<l7>&#9;&#9;&#9;&#9;String ss=scanner.nextLine();<br>
+<l8>&#9;&#9;&#9;&#9;String sa="";<br>
+<l9>&#9;&#9;&#9;&#9;for(int j=0;j<ss.length();j++){<br>
+<l10>&#9;&#9;&#9;&#9;&#9;sa=ss.substring(j, j+1)+sa;}<br>
+<l11>&#9;&#9;&#9;&#9;if(ss.equals(sa)){<br>
+<l12>&#9;&#9;&#9;&#9;&#9;System.out.println("Yes, it's a palindrome");}<br>
+<l13>&#9;&#9;&#9;&#9;else{<br>
+<l14>&#9;&#9;&#9;&#9;&#9;System.out.println("It's not a palindrome");}<br>
+<l15>&#9;&#9;&#9;&#9;}<br>
+<l16>&#9;&#9;&#9;scanner.close();<br>
+<l17>&#9;}<br>
+<l18>}<br>
+</ol>
+</pre>
+<hr width=80%>
+<h2>執行畫面:</h2>
+<img src=outcome.png>
+<hr width=80%>
+<h2>web1連結</h2>
+[<a href=web1.html>web1</a>]<br>
+</body>
+</html>

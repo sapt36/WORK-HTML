@@ -1,0 +1,26 @@
+<html>
+<title>U10916040.web4</title>
+<script>
+var rn=0,uans=0;
+function gennewvaule(){
+	rn=Math.floor(Math.random()*31);//Math.floor(3.142334)==3
+	alert(rn);
+}
+function check(){
+	var referencel=document.getElementById('ipl');
+	var uans=referencel.value;
+	var msg='';
+	if (uans==rn) msg='great';
+	else if (uans>rn) msg='too large'
+	else msg='too small';
+	var ref2=document.getElementById('feed');
+	ref2.innerHTML="<font size=6 color=red>"+msg+'</font>';
+}
+</script>
+<body onload="gennewvalue();" bgcolor="orange">
+<h4>please enter an integer(0-30):<h4>
+<input type=text id='ipl'>
+<button onclick='check();'>check</button><br>
+<p id='feed'></p>
+</body>
+</html>

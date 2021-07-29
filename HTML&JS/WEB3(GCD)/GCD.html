@@ -1,0 +1,113 @@
+<html>
+<title>U10916040.web3</title>
+<body bgcolor="orange" text="black">
+<h1>求三個整數的最大公因數(greatest common divisor, GCD)</h1>
+<hr width=80%>
+<a name="m1">
+<h4>聲明:只給第四個的main.c，其他都在執行情形截圖或source code裡</h4>
+<hr width=80%>
+[<a href=#m2>method-2</a>][<a href=#m3>method-3</a>][<a href=#m4>method-4</a>]
+<a href=Quiz.html>Quiz</a>
+<h2>解題方法1: <font color=red>Brute force</font>  (流程圖、虛擬碼)</h2>
+<h3>流程圖:</h3>
+<img src=1.png>
+<h3>虛擬碼:</h3>
+<ol>
+<l1>1.宣告兩變數表GCD和index<br>
+<l1>2.由使用者給定n1,n2求其GCD<br>
+<l1>3.一個一個數字試到兩數皆整除為止<br>
+<l1>4.輸出結果<br>
+</ol>
+<h3>source codes</h3>
+<pre>
+&#9;int gcd=1; i=2;<br>
+&#9;while (i&lt;=n1 && i&lt;=n2) {<br>
+&#9;&#9;if (n1%i==0 && n2%i==0)<br>
+&#9;&#9;&#9;gcd=i;<br>
+&#9;&#9;i++;}<br>
+&#9;System.out.println("use while for GCD("+n1+","+n2+")="+gcd);<br>
+&#9;System.out.println("use while for LCM("+n1+","+n2+")="+n1*n2/gcd);<br>
+</pre>
+<h3>執行情形</h3>
+<img src=image.png>
+<hr width=80%>
+<a name="m2">
+[<a href=#m1>method-1</a>][<a href=#m3>method-3</a>][<a href=#m4>method-4</a>]
+<a href=Quiz.html>Quiz</a>
+<h2>解題方法2: 輾轉相減法</h2>
+<h3>流程圖:</h3>
+<img src=2.png>
+<h3>虛擬碼:</h3>
+1.宣告兩數m,n<br>
+2.使用輾轉相減法<br>
+3.return m即為GCD<br>
+<h3>source codes<br></h3>
+<pre>
+static int gcd_loop1(int m, int n){<br>
+&#9;while (m!=n){<br>
+&#9;while (m&gt;n)  m=m-n;<br>
+&#9;while (m&lt;n)  n=n-m;<br>
+&#9;}<br>
+&#9;return (m);<br>
+&#9;}<br>
+</pre>
+<h3>執行情形</h3>
+<img src=3.png>
+<hr width=80%>
+<a name="m3">
+[<a href=#m1>method-1</a>][<a href=#m2>method-2</a>][<a href=#m4>method-4</a>]
+<a href=Quiz.html>Quiz</a>
+<h2>解題方法3: 輾轉相除法 : loop  (流程圖、虛擬碼)</h2>
+<h3>流程圖:</h3>
+<img src=4.png>
+<h3>虛擬碼:</h3>
+1. Divide x by y and compute the remainder; call that remainder r.<br>
+2. If r is zero, the procedure is complete, and the answer is y.<br>
+3. If r is not zero, set x equal to the old value of y, set y equal to r, and repeat the entire<br>
+<h3>source codes<br></h3>
+<pre>
+static int gcd_loop2(int m, int n){<br>
+&#9;int t;<br>
+&#9;if (m&lt;n){<br>
+&#9;&#9;t=m;m=n;n=t;}<br>
+&#9;while (n!=0){<br>
+&#9;&#9;t=m%n; m=n; n=t;<br>
+&#9;}<br>
+&#9;return (m);<br>
+}<br>
+</pre>
+<h3>執行情形</h3>
+<img src=5.png>
+<hr width=80%>
+<a name="m4">
+[<a href=#m1>method-1</a>][<a href=#m2>method-2</a>][<a href=#m3>method-3</a>]
+<a href=Quiz.html>Quiz</a>
+<h2>解題方法4: 輾轉相除法 :  recursive (流程圖、虛擬碼)</h2>
+<h3>流程圖:</h3>
+<img src=6.png>
+<h3>虛擬碼:</h3>
+1.宣告兩數m,n和t<br>
+2.利用遞迴讓 被除數m、除數n互換<br>
+3.餘數為零則GCD為n<br>
+4.不為零則以m%n,n再做一次<br>
+5.餘數為零則GCD為n<br>
+<h3>source codes<br></h3>
+<pre>
+static int gcd(int m, int n){<br>
+&#9;int temp;<br>
+&#9;if (m&lt;n) {temp=m;m=n;n=temp;}<br>
+&#9;if (m%n==0) return (n);<br>
+&#9;else return (gcd(n,m%n));<br>
+&#9;}<br>
+</pre>
+<h3>執行情形</h3>
+<img src=7.png>
+<hr>
+<hr>
+<a href=https://app.diagrams.net>類別圖製作網頁</a>
+<hr>
+<hr>
+<h4>上集回顧</h4>
+<iframe src=Quiz.html width=600 height=600></iframe><br>
+</body>
+</html>

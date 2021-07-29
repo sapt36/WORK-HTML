@@ -1,0 +1,224 @@
+<html>
+<title>HTML quiz  II</title>
+<script>
+var sc=0,count=0;
+function pass(correct,id){
+ var ref1=document.getElementById(id);
+ if (id=='q1'){
+  count+=1;
+ if (correct==1&&count==1){
+  ref1.innerHTML="Great!<img src=o.gif width=80 height=50>";
+  sc+=5;
+ }
+ else{
+  ref1.innerHTML="No!<img src=x.jpg width=80 height=50>";
+ }
+ }
+ if (id=='q2'){
+  count+=1;
+ if (correct==1&&count==2){
+  ref1.innerHTML="Great!<img src=o.gif width=80 height=50>";
+  sc+=5;
+ }
+ else{
+  ref1.innerHTML="No!<img src=x.jpg width=80 height=50>";
+ }
+ }
+ if (id=='q4'){
+  count+=1;
+ if (correct==1&&count==3){
+  ref1.innerHTML="Great!<img src=o.gif width=80 height=50>";
+  sc+=5;
+ }
+ else{
+  ref1.innerHTML="No!<img src=x.jpg width=80 height=50>";
+ }
+ }
+ if (id=='q5'){
+  count+=1;
+ if (correct==1&&count==4){
+  ref1.innerHTML="Great!<img src=o.gif width=80 height=50>";
+  sc+=5;
+ }
+ else{
+  ref1.innerHTML="No!<img src=x.jpg width=80 height=50>";
+ }
+ }
+ if (id=='q6'){
+  count+=1;
+ if (correct==1&&count==5){
+  ref1.innerHTML="Great!<img src=o.gif width=80 height=50>";
+  sc+=5;
+ }
+ else{
+  ref1.innerHTML="No!<img src=x.jpg width=80 height=50>";
+ }
+ }
+ if (id=='q7'){
+  count+=1;
+ if (correct==1&&count==6){
+  ref1.innerHTML="Great!<img src=o.gif width=80 height=50>";
+  sc+=5;
+ }
+ else{
+  ref1.innerHTML="No!<img src=x.jpg width=80 height=50>";
+ }
+ }
+ if (id=='q8'){
+  count+=1;
+ if (correct==1&&count==7){
+  ref1.innerHTML="Great!<img src=o.gif width=80 height=50>";
+  sc+=5;
+ }
+ else{
+  ref1.innerHTML="No!<img src=x.jpg width=80 height=50>";
+ }
+ }
+ if (id=='q9'){
+  count+=1;
+ if (correct==1&&count==8){
+  ref1.innerHTML="Great!<img src=o.gif width=80 height=50>";
+  sc+=5;
+ }
+ else{
+  ref1.innerHTML="No!<img src=x.jpg width=80 height=50>";
+ }
+ }
+ if (id=='q10'){
+  count+=1;
+ if (correct==1&&count==9){
+  ref1.innerHTML="Great!<img src=o.gif width=80 height=50>";
+  sc+=5;
+ }
+ else{
+  ref1.innerHTML="No!<img src=x.jpg width=80 height=50>";
+ }
+ }
+ if (id=='q11'){
+ count+=1;
+ if (correct==1&&count==10){
+  ref1.innerHTML="Great!<img src=o.gif width=80 height=50>";
+  sc+=5;
+ }
+ else{
+  ref1.innerHTML="No!<img src=x.jpg width=80 height=50>";
+ }
+ } 
+ if (id=='q12'){
+ count+=1;
+ if (correct==1&&count==11){
+  ref1.innerHTML="Great!<img src=o.gif width=80 height=50>";
+  sc+=5;
+ }
+ else{
+  ref1.innerHTML="No!<img src=x.jpg width=80 height=50>";
+ }
+ }
+ document.getElementById('sc').innerHTML=sc;
+}
+function check2(id1,id2){
+ var ref1=document.getElementById(id1);
+ var ref2=document.getElementById(id2);
+ if (ref1.value.toLowerCase()=="javascript"){
+  ref2.innerHTML="Great!<img src=o.gif width=80 height=50>";
+  sc+=5;
+ }
+ else{
+  ref2.innerHTML="No!<img src=x.jpg width=80 height=50>";
+ }
+ document.getElementById('sc').innerHTML=sc;
+}
+</script>
+<body bgcolor="orange">
+<h1>HTML quiz II：重複答題不重複給分</h1>
+<font color='red'><h2>請依序作答，不照順序或重複作答皆歸類為錯</h2></font>
+<hr>
+<font size=5>
+1.HTML&nbsp;Tag區分大小寫 ?
+<button onclick="pass(0, 'q1');">O</button>
+<button onclick="pass(1, 'q1');">X</button><br>
+<span id='q1'></span><br>
+
+2.最大字體?
+<input type=radio name="q1" onclick="pass(1, 'q2');">&lt;h1&gt;&nbsp;
+<input type=radio name="q1" onclick="pass(0, 'q2');">&lt;h2&gt;
+<input type=radio name="q1" onclick="pass(0, 'q2');">&lt;h3&gt;
+<input type=radio name="q1" onclick="pass(0, 'q2');">&lt;h4&gt;<br>
+<span id='q2'></span><br>
+
+3."JS"的英文全稱(小寫即可)：
+<input type=text id='key1' onchange="check2(this.id,'q3');"><br>
+<span id='q3'></span><br>
+
+4.請問下圖用了幾個&lt;tr&gt;?
+<input type=radio name='q1' onclick="pass(0, 'q4');">1
+<input type=radio name='q1' onclick="pass(0, 'q4');">2
+<input type=radio name="q1" onclick="pass(1, 'q4');">3
+<input type=radio name='q1' onclick="pass(0, 'q4');">4
+<table style="border:8px #FFD382 groove;" cellpadding="10" border='0'>
+<tr><td>1</td><td>2</td></tr>
+<tr><td>3</td><td>4</td></tr>
+<tr><td>5</td><td>6</td></tr>
+</table>
+<span id='q4'></span><br>
+
+5.&lt;br&gt;作用是?
+<input type=radio name='q1' onclick="pass(0, 'q5');">空格
+<input type=radio name="q1" onclick="pass(1, 'q5');">同enter
+<input type=radio name='q1' onclick="pass(0, 'q5');">同tab
+<input type=radio name='q1' onclick="pass(0, 'q5');">換兩行<br>
+<span id='q5'></span><br>
+
+6.HTML 文件中凡是夾在&lt;!-- 和 --&gt;之間的部份, 瀏覽器將其視為註解, 一概忽略之。
+<button onclick="pass(1, 'q6');">O</button>
+<button onclick="pass(0, 'q6');">X</button><br>
+<span id='q6'></span><br>
+
+7.&lt;A HREF="http://www.ntu.edu.tw"&gt;會連到哪個網站?<br>
+<input type=radio name='q1' onclick="pass(0, 'q7');">台師大
+<input type=radio name='q1' onclick="pass(0, 'q7');">台科大
+<input type=radio name='q1' onclick="pass(0, 'q7');">北師大
+<input type=radio name="q1" onclick="pass(1, 'q7');">台大<br>
+<span id='q7'></span><br>
+
+8.&lt;B&gt;文字&lt;/B&gt;是哪個?<br>
+<input type=radio name='q1' onclick="pass(0, 'q8');"><I>文字</I>
+<input type=radio name='q1' onclick="pass(0, 'q8');"><U>文字</U>
+<input type=radio name='q1' onclick="pass(0, 'q8');"><BIG>文字</BIG>
+<input type=radio name="q1" onclick="pass(1, 'q8');"><B>文字</B><br>
+<span id='q8'></span><br>
+
+9.&lt;body bgcolor="orange" text="black"&gt;是橘底黑字嗎?
+<button onclick="pass(1, 'q9');">O</button>
+<button onclick="pass(0, 'q9');">X</button><br>
+<span id='q9'></span><br>
+
+10.getelementbyid能對嗎?
+<button onclick="pass(0, 'q10');">O</button>
+<button onclick="pass(1, 'q10');">X</button><br>
+<span id='q10'></span><br>
+
+11.&lt;hr&gt;代表什麼?
+<input type=radio name='q1' onclick="pass(0, 'q11');">垂直線
+<input type=radio name='q1' onclick="pass(0, 'q11');">分隔線
+<input type=radio name="q1" onclick="pass(1, 'q11');">水平線
+<input type=radio name='q1' onclick="pass(0, 'q11');">麵線<br>
+<span id='q11'></span><br>
+
+12.var abc=["1","2","3"];<br>
+   var d=Math.floor(Math.random()*4);<br>
+   var ref=document.getElementById('e');<br>
+   ref.innerHTML='abc[d]'<br>
+ ----------------------------------------<br>
+   &lt;p id='e'&gt;&lt;/p&gt;<br>
+   會秀出哪個?<br>
+<input type=radio name='q1' onclick="pass(0, 'q12');">1
+<input type=radio name='q1' onclick="pass(0, 'q12');">2
+<input type=radio name="q1" onclick="pass(0, 'q12');">3
+<input type=radio name='q1' onclick="pass(1, 'q12');">皆有可能<br>
+<span id='q12'></span><br>
+
+<p>score：<span id="sc"></span>分</p>
+</font>
+</body>
+</html>
